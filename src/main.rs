@@ -1,5 +1,5 @@
 use egui::containers::panel::Side;
-use egui::{CentralPanel, Frame, SidePanel};
+use egui::{CentralPanel, Color32, Frame, SidePanel};
 
 fn main() {
     eframe::run_native(
@@ -25,13 +25,23 @@ struct ReproApp {
 impl eframe::App for ReproApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         SidePanel::new(Side::Left, "left")
-            .frame(Frame::none().inner_margin(32.0).outer_margin(32.0))
+            .frame(
+                Frame::none()
+                    .fill(Color32::RED)
+                    .inner_margin(32.0)
+                    .outer_margin(32.0),
+            )
             .show_animated(ctx, self.show_left, |ui| {
                 ui.label("hi there");
             });
-        
+
         SidePanel::new(Side::Right, "right")
-            .frame(Frame::none().inner_margin(32.0).outer_margin(32.0))
+            .frame(
+                Frame::none()
+                    .fill(Color32::RED)
+                    .inner_margin(32.0)
+                    .outer_margin(32.0),
+            )
             .show_animated(ctx, self.show_right, |ui| {
                 ui.label("hi there");
             });
