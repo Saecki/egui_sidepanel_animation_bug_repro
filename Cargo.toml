@@ -1,0 +1,8 @@
+[package]
+name = "egui_sidepanel_animation_bug_repro"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+egui = { git = "https://github.com/emilk/egui" }
+eframe = { git = "https://github.com/emilk/egui" }
